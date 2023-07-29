@@ -21,5 +21,5 @@ jobs:
       - name: Build and push image
         run: |
           docker buildx build \
-            --tag jajcoszek/ViennaCallingApp/backend:${GITHUB_SHA} \
+            --tag jajcoszek/viennacalling-backend:${GITHUB_SHA} \
             --push --platform linux/amd64,linux/arm64 .

@@ -16,10 +16,10 @@ spec:
         app: backend
     spec:
       containers:
-      - image: jajcoszek/ViennaCallingApp/backend
-        imagePullPolicy: Always
-        name: backend
-        ports:
-          - containerPort: 8080
-            name: http
-            protocol: TCP
+        - image: jajcoszek/viennacalling-backend:1.0.0
+          imagePullPolicy: Always
+          name: backend
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP

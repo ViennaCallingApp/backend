@@ -1,7 +1,5 @@
 {
-  "branches": [
-    "main"
-  ],
+  "branches": ["main"],
   "tagFormat": "v${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
@@ -16,15 +14,13 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "docker buildx build --push --tag jajcoszek/ViennaCallingApp/backend:${nextRelease.version} --tag jajcoszek/ViennaCallingApp/backend:latest --platform linux/amd64,linux/arm64 ."
+        "prepareCmd": "docker buildx build --push --tag jajcoszek/viennacalling-backend:${nextRelease.version} --tag jajcoszek/viennacalling-backend:latest --platform linux/amd64,linux/arm64 ."
       }
     ],
     [
       "@semantic-release/git",
       {
-        "assets": [
-          "CHANGELOG.md"
-        ]
+        "assets": ["CHANGELOG.md"]
       }
     ]
   ]
