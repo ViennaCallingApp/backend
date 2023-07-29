@@ -12,7 +12,7 @@ RUN mvn --batch-mode package -DskipTests=true
 FROM eclipse-temurin:17
 
 ENV APP_USER app
-ENV APP_HOME /usr/local/servus-region-backend
+ENV APP_HOME /usr/local/backend
 
 ARG ENV=PROD
 ENV ENV=${ENV}
@@ -21,7 +21,7 @@ RUN addgroup --system $APP_USER && adduser --system --disabled-password --no-cre
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
-COPY --from=builder /app/target/servus-region-backend.jar servus-region-backend.jar
+COPY --from=builder /app/target/backend.jar backend.jar
 
 RUN chown -R $APP_USER:$APP_USER $APP_HOME
 USER $APP_USER

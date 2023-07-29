@@ -12,7 +12,7 @@
     <artifactId>backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ViennaCallingApp-backend</name>
-    <description>Backend project for servus-region</description>
+    <description>Backend project for ViennaCallingApp</description>
     <properties>
         <start-class>com.ViennaCallingApp.backend.ViennaCallingAppBackendApplication</start-class>
         <java.version>13</java.version>
