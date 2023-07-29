@@ -1,0 +1,31 @@
+{
+  "branches": [
+    "main"
+  ],
+  "tagFormat": "v${version}",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogTitle": "# ViennaCallingApp Backend changelog"
+      }
+    ],
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "docker buildx build --push --tag jajcoszek/ViennaCallingApp/backend:${nextRelease.version} --tag jajcoszek/ViennaCallingApp/backend:latest --platform linux/amd64,linux/arm64 ."
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md"
+        ]
+      }
+    ]
+  ]
+}

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: backend
+  name: backend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - image: jajcoszek/ViennaCallingApp/backend
+        imagePullPolicy: Always
+        name: backend
+        ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP

@@ -1,0 +1,25 @@
+name: build-and-push-image
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  buildx-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+        with:
+          platforms: arm64,arm
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: Build and push image
+        run: |
+          docker buildx build \
+            --tag jajcoszek/ViennaCallingApp/backend:${GITHUB_SHA} \
+            --push --platform linux/amd64,linux/arm64 .
