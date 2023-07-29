@@ -1,21 +1,21 @@
 package com.ViennaCallingApp.backend.model;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Path {
 
-    private Map<String, Step> paths;
+    private List<Step> paths;
 
     public Path() {
-        paths = new HashMap<>();
+        paths = new ArrayList<>();
     }
 
     public void addStep(Step step) {
-        paths.put(step.getTitle(), step);
+        paths.add(step);
     }
 
-    public Map<String, Step> getSteps() {
+    public List<Step> getSteps() {
         return paths;
     }
 

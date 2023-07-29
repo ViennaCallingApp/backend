@@ -23,4 +23,12 @@ public class Box {
             }
         }
     }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public void setContents(List<String> contents) {
+        this.contents = contents;
+    }
 }

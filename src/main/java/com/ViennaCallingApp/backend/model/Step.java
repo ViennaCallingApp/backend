@@ -6,6 +6,8 @@ public class Step {
     private Box overview;
     private Box route;
     private Box alternative;
+    private StepQuery stepQueryFrom;
+    private StepQuery stepQueryTo;
 
     public Step() {
     }
@@ -40,5 +42,21 @@ public class Step {
 
     public void setAlternative(Box alternative) {
         this.alternative = alternative;
+    }
+
+    public StepQuery getStepQueryFrom() {
+        return stepQueryFrom;
+    }
+
+    public void setStepQueryFrom(StepQuery stepQueryFrom) {
+        this.stepQueryFrom = stepQueryFrom;
+    }
+
+    public StepQuery getStepQueryTo() {
+        return stepQueryTo;
+    }
+
+    public void setStepQueryTo(StepQuery stepQueryTo) {
+        this.stepQueryTo = stepQueryTo;
     }
 }
