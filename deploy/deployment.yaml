@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: backend
-  name: backend
+    app: viennacalling-backend
+  name: viennacalling-backend
 spec:
   replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
-      app: backend
+      app: viennacalling-backend
   template:
     metadata:
       labels:
-        app: backend
+        app: viennacalling-backend
     spec:
       containers:
         - image: jajcoszek/viennacalling-backend:1.0.0
