@@ -1,15 +1,11 @@
 package com.ViennaCallingApp.backend.middleware;
 
+import com.ViennaCallingApp.backend.model.Box;
 import com.ViennaCallingApp.backend.model.Step;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
-import org.jsoup.nodes.TextNode;
-import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.List;
 
 public class PoptisScraper {
 
@@ -24,23 +20,12 @@ public class PoptisScraper {
 
         step.setTitle(doc.title());
 
-        List<Node> nodes = doc.getElementsByClass("overview").first().childNodes();
-
-        String output = "";
-
-        for ( Node node : nodes ){
-            if(node instanceof TextNode){
-                output = output + node.toString();
-            }
-        }
-
-
-
-        step.setOverview(doc.getElementsByClass("overview").toString());
-        step.setRoute(doc.getElementsByClass("route").toString());
-        step.setAlternative(doc.getElementsByClass("alternativ").toString());
+        step.setOverview(new Box(doc.getElementsByClass("overview")));
+        step.setRoute(new Box(doc.getElementsByClass("route")));
+        step.setAlternative(new Box(doc.getElementsByClass("alternativ")));
 
         return doc;
     }
+
 
 }

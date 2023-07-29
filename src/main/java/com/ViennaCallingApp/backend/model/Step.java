@@ -3,9 +3,9 @@ package com.ViennaCallingApp.backend.model;
 public class Step {
 
     private String title;
-    private String overview;
-    private String route;
-    private String alternative;
+    private Box overview;
+    private Box route;
+    private Box alternative;
 
     public Step() {
     }
@@ -18,27 +18,27 @@ public class Step {
         this.title = title;
     }
 
-    public String getOverview() {
+    public Box getOverview() {
         return overview;
     }
 
-    public void setOverview(String overview) {
+    public void setOverview(Box overview) {
         this.overview = overview;
     }
 
-    public String getRoute() {
+    public Box getRoute() {
         return route;
     }
 
-    public void setRoute(String route) {
+    public void setRoute(Box route) {
         this.route = route;
     }
 
-    public String getAlternative() {
+    public Box getAlternative() {
         return alternative;
     }
 
-    public void setAlternative(String alternative) {
+    public void setAlternative(Box alternative) {
         this.alternative = alternative;
     }
 }
