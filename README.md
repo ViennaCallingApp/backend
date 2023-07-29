@@ -15,7 +15,7 @@ This project is set up using `Maven` and uses its lifecycle actions.
 
 It is possible to start the back-end server locally via `Docker` and expose it via a custom port and then use it in the front-end.
 
-E.g. `docker run -p 3000:8080 jajcoszek/ViennaCallingApp/backend:latest` will enable the back-end server on local port 3000.
+E.g. `docker run -p 3000:8080 jajcoszek/viennacalling-backend:latest` will enable the back-end server on local port 3000.
 
 ## Contributing
 
