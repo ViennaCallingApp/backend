@@ -28,4 +28,4 @@ USER $APP_USER
 
 EXPOSE 8080
 
-CMD ["java", "-Xmx1024m", "-Xms512m", "-jar", "/usr/local/backend/backend.jar"]
+CMD ["java", "-Xmx128m", "-Xms128m", "-jar", "/usr/local/backend/backend.jar"]
