@@ -40,7 +40,7 @@ public class RESTController {
              * scraper.getDetailPage("Alte_Donau", "U1_Richtung_Leopoldau",
              * "U1_Richtung_Oberlaa"));
              */
-            return ResponseEntity.ok().cacheControl(CacheControl.maxAge(1, TimeUnit.HOURS))
+            return ResponseEntity.ok().cacheControl(CacheControl.maxAge(1, TimeUnit.HOURS).cachePublic())
                     .body(mapper.writeValueAsString(path));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
